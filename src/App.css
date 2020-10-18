@@ -1,38 +1,470 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200&display=swap');
+
+:root {
+  --primary: #363f45;
+  --secondary: #21d07a;
+  --white: #fff;
+  --backgroundColor: #dddedf;
+  --maintmdb: #0d253f;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: var(--backgroundColor);
+  height: 50px;
+  width: 100%;
+}
+
+footer .footer-content {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  padding: 4px 10px;
+  margin-right: 10px;
+  color: var(--white);
+  background-color: #0d253f;
+}
+
+footer span {
+  text-align: center;
+  margin-right: 10px;
+  font-weight: 200;
+  font-style: italic;
+  font-size: 0.6rem;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 10px 15px;
+  color: var(--primary);
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 5px;
+  background: var(--backgroundColor);
+  box-shadow: 5px 5px 10px #bcbdbe, -5px -5px 10px #feffff;
+  transition: all 0.3s ease;
+  line-height: 1.1;
+}
+
+.btn:hover,
+.btn:active,
+.btn.active {
+  box-shadow: inset 5px 5px 10px #bcbdbe, inset -5px -5px 10px #feffff;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* Header Styles */
+header {
+  background-color: var(--backgroundColor);
+}
+
+header .inner-content {
+  padding: 10px 0;
+}
+
+header a {
+  color: var(--primary);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+header a:hover {
+  opacity: 0.7;
+}
+
+header .brand {
+  display: none;
+}
+
+header .nav-links {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links--item {
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.nav-links--item:hover,
+.nav-links--item:active,
+.nav-links--item.active {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: var(--white);
+}
+
+/* Add Page */
+.pagination {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-links {
+  margin: 0 3px;
+}
+
+.pagination-links button {
+  outline: none;
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 30px;
+  min-width: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: var(--white);
+}
+
+.pagination-links.active button {
+  pointer-events: none;
+  color: var(--white);
+  background-color: grey;
+  font-weight: 700;
+}
+
+.pagination-links .btn-page {
+  border: none;
+  vertical-align: middle;
+}
+
+.add-content {
+  min-height: calc(100vh - 114px);
+  padding: 50px 0;
+}
+
+.add-content .input-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.add-content .input-wrapper input {
+  width: 100%;
+  background-color: var(--backgroundColor);
+  padding: 10px;
+  border-radius: 13px;
+  box-shadow: inset 5px 5px 10px #bcbdbe, inset -5px -5px 10px #feffff;
+  border: none;
+  font-size: 1.25rem;
+}
+
+fieldset {
+  position: relative;
+  border: 1px solid grey;
+  border-radius: 18px;
+  background-color: var(--backgroundColor);
+  padding-top: 0;
+}
+
+legend {
+  color: var(--primary);
+  text-shadow: 1px 1px 1px var(--white);
+  font-weight: 300;
+}
+
+.search-ico {
+  fill: grey;
+  filter: drop-shadow(1px 1px 1px grey);
+  position: absolute;
+  bottom: 20px;
+  right: 23px;
+}
+
+.results {
+  padding: 0;
+  margin-top: 20px;
+}
+
+.results li {
+  list-style: none;
+}
+
+.result-card {
+  margin-bottom: 20px;
+}
+
+.result-card .poster-wrapper img,
+.filler-poster {
+  height: 300px;
+  width: 200px;
+  background-color: #dbdada;
+  border-radius: 5px;
+  margin: 0 auto;
+  display: block;
+  color: transparent;
+}
+
+.result-card .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.result-card .info .title {
+  font-size: 1.25rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin: 0;
+}
+
+.result-card .info .release-date {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--primary);
+  margin: 0;
+}
+
+.result-card .info .overview {
+  font-size: 0.8rem;
+  font-weight: 300;
+  text-align: justify;
+  text-justify: inter-word;
+  color: var(--primary);
+  margin: 0;
+}
+
+.result-card .controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.result-card .controls button {
+  margin-top: 10px;
+}
+
+/* Movie Page */
+.movie-page {
+  min-height: calc(100vh - 114px);
+  padding: 30px 0;
+}
+
+.movie-page .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.count-pill {
+  display: block;
+  background-color: var(--secondary);
+  padding: 5px 15px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 20px;
+  color: var(--primary);
+}
+
+.movie-page .heading {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin: 0;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+
+.movie-card {
+  width: 100%;
+  position: relative;
+  display: block;
+}
+
+.movie-card img {
+  border-radius: 6px;
+  width: 100%;
+  display: block;
+}
+
+.movie-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.movie-card:hover .overlay {
+  border: 3px solid var(--secondary);
+}
+
+.movie-card .inner-card-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 34px;
+  width: 74px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  padding: 3px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.movie-card:hover .inner-card-controls {
+  opacity: 1;
+}
+
+.ctrl-btn {
+  color: #fefefe;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+  font-size: 1.6rem;
+  padding: 0 5px;
+  margin: 0;
+}
+
+.ctrl-btn:hover {
+  color: var(--secondary);
+  cursor: pointer;
+}
+
+.movie-page .no-movies {
+  color: #c4c4c4;
+  font-size: 3rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  header .inner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header a {
+    font-size: 1.25rem;
+  }
+
+  header .brand {
+    display: block;
+  }
+
+  header .brand a {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  header .nav-links {
+    justify-content: unset;
+  }
+
+  header .nav-links li {
+    margin-right: 30px;
+  }
+
+  header .nav-links li:last-child {
+    margin-right: 0;
+  }
+
+  .result-card {
+    display: flex;
+  }
+
+  .result-card .poster-wrapper img,
+  .filler-poster {
+    width: 150px;
+    height: 226px;
+    background-color: #dbdada;
+    border-radius: 5px;
+    margin-right: 15px;
+    display: block;
+    color: transparent;
+  }
+
+  .result-card .controls {
+    display: flex;
+    justify-content: unset;
+  }
+
+  .result-card .controls button {
+    margin-right: 10px;
+    margin-top: 0;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .movie-page .heading {
+    font-size: 2rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .movie-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+  .results {
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }

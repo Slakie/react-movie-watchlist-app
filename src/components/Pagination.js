@@ -20,10 +20,6 @@ export const Pagination = ({
   let leftPortionPageNumber = (portionNumber - 1) * portionSize + 1;
   let rightPortionPageNumber = portionNumber * portionSize;
 
-  console.log(leftPortionPageNumber);
-  console.log(rightPortionPageNumber);
-  console.log(portionNumber);
-
   return (
     <ul className="pagination">
       {/* {currentPage > 1 && (

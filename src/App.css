@@ -214,13 +214,14 @@ header .nav-links {
 
 .add-content .input-wrapper input {
   width: 100%;
-  background-color: var(--backgroundColor);
+  font-size: 1.25rem;
   padding: 10px;
+  background-color: var(--backgroundColor);
+  border: none;
   border-radius: 13px;
+  -webkit-appearance: none;
   -webkit-box-shadow: inset 5px 5px 10px #bcbdbe, inset -5px -5px 10px #feffff;
   box-shadow: inset 5px 5px 10px #bcbdbe, inset -5px -5px 10px #feffff;
-  border: none;
-  font-size: 1.25rem;
 }
 
 fieldset {

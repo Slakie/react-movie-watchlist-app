@@ -15,8 +15,14 @@ body {
 }
 
 footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
   background-color: var(--backgroundColor);
   height: 50px;
@@ -24,7 +30,11 @@ footer {
 }
 
 footer .footer-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   border-radius: 20px;
   padding: 4px 10px;
@@ -51,11 +61,16 @@ footer span {
 *,
 *:before,
 *:after {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   border: none;
   padding: 10px 15px;
@@ -64,7 +79,10 @@ footer span {
   font-weight: 700;
   border-radius: 5px;
   background: var(--backgroundColor);
+  -webkit-box-shadow: 5px 5px 10px #bcbdbe, -5px -5px 10px #feffff;
   box-shadow: 5px 5px 10px #bcbdbe, -5px -5px 10px #feffff;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   line-height: 1.1;
 }
@@ -72,6 +90,7 @@ footer span {
 .btn:hover,
 .btn:active,
 .btn.active {
+  -webkit-box-shadow: inset 5px 5px 10px #bcbdbe, inset -5px -5px 10px #feffff;
   box-shadow: inset 5px 5px 10px #bcbdbe, inset -5px -5px 10px #feffff;
   opacity: 1;
   cursor: pointer;
@@ -99,6 +118,8 @@ header a {
   color: var(--primary);
   font-size: 1rem;
   text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -114,8 +135,14 @@ header .nav-links {
   padding: 0;
   margin: 0;
   list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -137,8 +164,14 @@ header .nav-links {
   padding: 0;
   margin: 0;
   list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -184,6 +217,7 @@ header .nav-links {
   background-color: var(--backgroundColor);
   padding: 10px;
   border-radius: 13px;
+  -webkit-box-shadow: inset 5px 5px 10px #bcbdbe, inset -5px -5px 10px #feffff;
   box-shadow: inset 5px 5px 10px #bcbdbe, inset -5px -5px 10px #feffff;
   border: none;
   font-size: 1.25rem;
@@ -205,6 +239,7 @@ legend {
 
 .search-ico {
   fill: grey;
+  -webkit-filter: drop-shadow(1px 1px 1px grey);
   filter: drop-shadow(1px 1px 1px grey);
   position: absolute;
   bottom: 20px;
@@ -236,8 +271,15 @@ legend {
 }
 
 .result-card .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -265,7 +307,11 @@ legend {
 }
 
 .result-card .controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -280,8 +326,14 @@ legend {
 }
 
 .movie-page .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   margin-bottom: 30px;
 }
@@ -303,9 +355,11 @@ legend {
 }
 
 .movie-grid {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 30px 1fr;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 30px;
+  gap: 30px;
 }
 
 .movie-card {
@@ -315,7 +369,7 @@ legend {
 }
 
 .movie-card img {
-  border-radius: 6px;
+  border-radius: 7px;
   width: 100%;
   display: block;
 }
@@ -328,6 +382,8 @@ legend {
   height: 100%;
   border-radius: 5px;
   border: 2px solid transparent;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -336,23 +392,33 @@ legend {
 }
 
 .movie-card .inner-card-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
   height: 34px;
   width: 74px;
   position: absolute;
   bottom: 20px;
   left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.8);
   border-radius: 5px;
-  padding: 3px;
   opacity: 0;
+  z-index: -1;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .movie-card:hover .inner-card-controls {
+  z-index: 0;
   opacity: 1;
 }
 
@@ -361,6 +427,8 @@ legend {
   background-color: transparent;
   border: none;
   outline: none;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   font-size: 1.6rem;
   padding: 0 5px;
@@ -384,8 +452,14 @@ legend {
   }
 
   header .inner-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
   }
 
@@ -403,6 +477,8 @@ legend {
   }
 
   header .nav-links {
+    -webkit-box-pack: unset;
+    -ms-flex-pack: unset;
     justify-content: unset;
   }
 
@@ -415,6 +491,8 @@ legend {
   }
 
   .result-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 
@@ -430,7 +508,11 @@ legend {
   }
 
   .result-card .controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: unset;
+    -ms-flex-pack: unset;
     justify-content: unset;
   }
 
@@ -440,6 +522,7 @@ legend {
   }
 
   .movie-grid {
+    -ms-grid-columns: 1fr 1fr 1fr;
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -454,6 +537,7 @@ legend {
   }
 
   .movie-grid {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: repeat(5, 1fr);
   }
 }

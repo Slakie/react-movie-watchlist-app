@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { ReactComponent as AddCircle } from '../img/plus-circle-solid.svg';
+import { ReactComponent as Logo } from '../img/logo.svg';
 
 export const Header = () => {
   return (
@@ -8,7 +9,9 @@ export const Header = () => {
       <div className="container">
         <div className="inner-content">
           <div className="brand">
-            <Link to="/">WatchList</Link>
+            <Link title="watchlist" to="/">
+              <Logo height="40" width="40" />
+            </Link>
           </div>
           <ul className="nav-links">
             <li>

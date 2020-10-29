@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ResultCard } from './ResultCard';
 import { Pagination } from './Pagination';
-import { ReactComponent as Search } from '../img/search.svg';
+import { ReactComponent as Search } from '../img/search-solid.svg';
 
 export const Add = () => {
   const [query, setQuery] = useState('');
@@ -11,7 +11,8 @@ export const Add = () => {
   const [portionNumber, setPortionNumber] = useState(1);
 
   const search = (e) => {
-    if (e.key === 'Enter' && query.trim() !== '') {
+    e.preventDefault();
+    if (query.trim() !== '') {
       fetch(
         `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1&include_adult=false&query=${query}`
       )
@@ -55,17 +56,18 @@ export const Add = () => {
       <div className="container">
         <div className="add-content">
           <div className="input-wrapper">
-            <fieldset>
-              <legend>Search input</legend>
+            <form className="search-bar" onSubmit={search}>
               <input
-                autoFocus
+                className="search-bar__input"
                 type="text"
                 placeholder="Search for a movie..."
-                onKeyDown={search}
+                value={query}
                 onChange={handleInput}
               />
-              <Search className="search-ico" height="24px" />
-            </fieldset>
+              <button className="search-bar__submit" type="submit">
+                <Search fill="currentColor" height="24" />
+              </button>
+            </form>
           </div>
           {results.length > 0 && (
             <ul className="results">
